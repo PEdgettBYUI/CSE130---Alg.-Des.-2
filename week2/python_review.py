@@ -1,0 +1,19 @@
+print(f"Week {1}")
+
+print(f"Week {'1'}")
+
+print("Week", 1)
+
+print("Week " "1")
+
+print("Week " + str(1))
+
+print("Week", "1")
+
+print("Week " + "1")
+
+print("Week 1")
+
+# print("Week " + 1)
+
+print('Week 1')
