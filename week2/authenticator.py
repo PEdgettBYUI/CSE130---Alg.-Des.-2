@@ -18,40 +18,44 @@ import json
 # Convert the JSON to a list
 filename = "week2/authenticator.json"
 
-try:
-    with open(filename, "r") as file:
-        data_text = file.read() # <-- The JSON is a raw String
+# NOTE: While loop for demonstration purposes, exit by entering exit as username
+input_username = "blank"
+while input_username != "exit":
 
-    # print("JSON as string:")
-    # print(data_text)
+    try:
+        with open(filename, "r") as file:
+            data_text = file.read() # <-- The JSON is a raw String
 
-    # Turns string into a python object
-    # Converts it into a dictionary
-    data_dictionary = json.loads(data_text)
-    # print(data_dictionary["username"])
-    # print(data_dictionary["password"])
+        # print("JSON as string:")
+        # print(data_text)
 
-# Create two lists from the dictionary entries
-    user_dict = data_dictionary["username"]
-    pass_dict = data_dictionary["password"]
+        # Turns string into a python object
+        # Converts it into a dictionary
+        data_dictionary = json.loads(data_text)
+        # print(data_dictionary["username"])
+        # print(data_dictionary["password"])
 
-except Exception as e:
-    print(f"unable to open file {filename}: {e}")
+    # Create two lists from the dictionary entries
+        user_dict = data_dictionary["username"]
+        pass_dict = data_dictionary["password"]
 
-# Prompt for Username
-input_username = input("Enter your username: ")
+    except Exception as e:
+        print(f"unable to open file {filename}: {e}")
 
-# Prompt for Password
-input_password = input("Enter your password: ")
+    # Prompt for Username
+    input_username = input("Enter your username: ")
 
-# Check if username and password match the correct entries in the linked-list
-print()
-if input_username in user_dict:
-    index = user_dict.index(input_username)
-    if input_password == pass_dict[index]:
-        print("You are authenticated!")
+    # Prompt for Password
+    input_password = input("Enter your password: ")
+
+    # Check if username and password match the correct entries in the linked-list
+    print()
+    if input_username in user_dict:
+        index = user_dict.index(input_username)
+        if input_password == pass_dict[index]:
+            print("You are authenticated!")
+        else:
+            print("You are not authorized to use the system.")
     else:
         print("You are not authorized to use the system.")
-else:
-    print("You are not authorized to use the system.")
-print()
+    print()
