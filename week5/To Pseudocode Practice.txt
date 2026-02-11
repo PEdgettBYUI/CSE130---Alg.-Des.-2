@@ -1,0 +1,58 @@
+// Java
+public static void main(String[] args)
+{
+    // Prompt for the money in dollars
+    double moneyDOllars = getDollars();
+
+    // Perform conversion
+}
+
+// In Pseudocode
+
+main()
+    money <- getDollars()
+        moneyEuros <- 0.873 * moneyDollars
+        PUT money Euros
+
+
+--Practice 2--
+// Visual Basic
+Sub displayNeagative(ByVal ParamArray balances() As Double)
+    ' Loop through the array looking for negative values
+    For i As Integer = 0 To UBound(balances, 1)
+        if balances(i) < 0.00 Then
+            Console.WriteLine("ERROR: " & balances(i))
+        End if
+    Next if
+End sub
+
+// Pseudocode
+displayNeagative(balances)
+    FOR i <- 0 ... balances.size()
+        IF balances[i] < 0
+            PUT error on the screen
+
+
+--Practice 3--
+// Is Leapyear to Pseudocode
+a Leapyear is any year divisible by 4, except centential years, except those divisible by 400
+
+//Pseudocode
+CALL isLeapyear(year)
+    IF year MOD 4 != 0
+        RETURN False
+    IF year MOD 100 != 0
+        RETURN True
+    RETURN NOT year MOD 400
+
+
+--Practice 4--
+// Upgrade our ship
+Upgrade the ship if the ship is at Lv 2, has >= 200pts, and has been @ LV2 for >= 2mins
+
+// Pseudocode
+DEFINE upgradeShip()
+    IF shipLv = 2
+        IF time >= 2 minutes AND pts >= 200
+            shipLv == 3
+    ELSE RETURN 0
