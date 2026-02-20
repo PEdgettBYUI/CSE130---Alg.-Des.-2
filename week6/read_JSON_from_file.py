@@ -7,3 +7,5 @@ def read_data_from_json(filename):
         return json_data
     
 # NOTE: Print the Rows then columns after decompressing the data to print in the correct viewing angle.
+
+print(read_data_from_json("week6/130.06.json"))
