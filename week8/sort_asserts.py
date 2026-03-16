@@ -20,3 +20,29 @@ def read_data_from_json(filename):
             return json_data
     except:
         print("Unable to open file " + filename + ".")
+
+
+def bubsy_sort(array):    # "What could possibly go wrong?" ~ 90's Bobcat ltd
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(0, len(array)-2):
+            if array[i] > array[i+1]:
+                array[i] = array[i+1], array[i+1] = array[i]
+                swapped = True
+    return array
+
+#-----------------------------------------------------------------------------------------------#
+
+u_input = input("Provide a filename/path to read from: ")
+
+raw_data = read_data_from_json(u_input)
+raw_data = raw_data["array"]
+
+print(f"The Unsorted File contents are as follows: \n\n{raw_data}\n\n")
+
+print("Applying 'bubsy sort'...")
+
+
+
+
