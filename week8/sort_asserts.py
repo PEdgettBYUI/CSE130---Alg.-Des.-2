@@ -22,13 +22,17 @@ def read_data_from_json(filename):
         print("Unable to open file " + filename + ".")
 
 
+# # The "bubsy sort" is a lazy sort, that will slowly go through an array and swap each
+# # adjacent value with each other. What makes it lazy is it defaults to ASCII values
+# # for non-numeric characters. Meaning that capital letters always appear before lowercase
+# # letters, even if it doesn't make much sense linguistically.
 def bubsy_sort(array):    # "What could possibly go wrong?" ~ 90's Bobcat ltd
     swapped = True
     while swapped:
         swapped = False
         for i in range(0, len(array)-2):
             if array[i] > array[i+1]:
-                array[i] = array[i+1], array[i+1] = array[i]
+                array[i], array[i+1] = array[i+1], array[i]
                 swapped = True
     return array
 
@@ -42,6 +46,10 @@ raw_data = raw_data["array"]
 print(f"The Unsorted File contents are as follows: \n\n{raw_data}\n\n")
 
 print("Applying 'bubsy sort'...")
+
+sorted_data = bubsy_sort(raw_data)
+
+print(f"The Sorted Array: \n\n{sorted_data}\n\n")
 
 
 
