@@ -11,7 +11,8 @@
 import json
 
 
-
+# # This function takes the path and filename of the file from the room folder of the program
+# # and will return all of the json data as a dictionary that can be stored elsewhere
 def read_data_from_json(filename):
     try:
         with open(filename, "rt") as filehandle:
@@ -20,7 +21,6 @@ def read_data_from_json(filename):
             return json_data
     except:
         print("Unable to open file " + filename + ".")
-
 
 # # The "bubsy sort" is a lazy sort, that will slowly go through an array and swap each
 # # adjacent value with each other. What makes it lazy is it defaults to ASCII values
@@ -43,14 +43,14 @@ u_input = input("Provide a filename/path to read from: ")
 raw_data = read_data_from_json(u_input)
 raw_data = raw_data["array"]
 
-print(f"The Unsorted File contents are as follows: \n\n{raw_data}\n\n")
+# print(f"The Unsorted File contents are as follows: \n\n{raw_data}\n\n")
 
 print("Applying 'bubsy sort'...")
 
 sorted_data = bubsy_sort(raw_data)
 
-print(f"The Sorted Array: \n\n{sorted_data}\n\n")
+print(f"The Sorted Array:")
 
-
-
-
+for item in sorted_data:
+    print(f"     {item}")
+print("\n\n")
